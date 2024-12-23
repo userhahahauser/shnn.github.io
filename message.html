@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Classement avec Affichage Dynamique</title>
+</head>
+<body>
+<header class="bg-blue-500 h-full flex items-center">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 mx-auto">
+        <a href="acceuil.html">
+        <img width="30" height="30" src="https://img.icons8.com/windows/64/menu--v1.png" alt="menu-icon"/>
+    </a>
+    <a href="index.html">
+        <img src="https://eleve.centre-europeen-formation.fr/static/media/logo-white.d82ca69404e871b89d5ddafbbbc4a7bd.svg" class="w-16 sm:w-20" alt="logo" style="margin-left: 30px;" />
+    </a>
+
+        <div class="flex gap-3 ">
+            <!-- Icône de Nouveau Post avec lien -->
+            <a href="message.html" title="Nouveau Post">
+                <img width="25" height="25" src="https://img.icons8.com/material-outlined/48/new-post.png" alt="new-post-icon" />
+            </a>
+    
+            <!-- Icône de Rappels de Rendez-vous avec lien -->
+            <a href="notification.html" title="Rappels de Rendez-vous">
+                <img width="25" height="25" src="https://img.icons8.com/ios/100/info--v2.png" alt="info--v2"/>                </a>
+    
+            <!-- Icône Image avec lien et style -->
+        </div>
+    </div>
+</header>
+
+
+    <div class="bg-yellow-400 h-24 flex flex-col items-center justify-center px-4">
+        <h1 class="text-white font-bold text-center text-sm sm:text-base">Vous avez 2 devoirs en retard depuis le 11 septembre 2024.</h1>
+        <p class="text-white mt-1 font-bold text-center text-sm sm:text-base">Pour réaliser votre devoir le plus en retard, cliquez <a href="#" class="underline">ICI</a>.</p>
+    </div>  
+
+    <div class="space-y-4 mt-6">
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" class="rounded-xl" src="https://img.icons8.com/fluency-systems-regular/48/image--v2.png" alt="image--v2"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">sabjon mali</h1>
+                <h1>bonjour monsieur</h1>
+            </div>
+        </div>  
+
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" class="rounded-xl" src="https://img.icons8.com/fluency-systems-regular/48/image--v2.png" alt="image--v2"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">sabjon mali</h1>
+                <h1>Bonjour ! Oui, j'ai avancé un peu et je voulais vous poser quelques questions. J'ai bien compris le principe de séparer le code en différents composants, mais je suis encore un peu perdu sur la manière de les structurer efficacement. J'aimerais éviter de tout mettre dans un seul fichier .vue, mais je veux aussi que les composants soient vraiment réutilisables et faciles à gérer.</h1>
+            </div>
+        </div>  
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" src="https://img.icons8.com/ios/50/gender-neutral-user--v4.png" alt="gender-neutral-user--v4"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">PROF (MENTORE)</h1>
+                <h1>C’est une excellente réflexion ! Dans un projet en Vue.js, il est toujours préférable de penser en termes de composants modulaires dès le début. Par exemple, vous pourriez organiser votre projet en plusieurs parties : l'en-tête, le contenu principal, et le pied de page pourraient tous être des composants séparés. Ensuite, si vous avez des éléments spécifiques qui se répètent, comme des cartes de présentation de vos idées de business, vous pouvez créer un composant “CarteBusiness.vue” que vous utiliserez partout où il est nécessaire. Cela rend le code plus lisible, et surtout, vous n’aurez pas à réécrire du code pour chaque nouvelle section !</h1>
+            </div>
+        </div> 
+
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" src="https://img.icons8.com/ios/50/gender-neutral-user--v4.png" alt="gender-neutral-user--v4"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">PROF (MENTORE)</h1>
+                <h1>Exactement ! Les props sont parfaites pour ça. Elles permettent de rendre chaque instance de votre composant unique sans créer de nouveaux composants à chaque fois. Par exemple, vous pourriez passer en props le titre de l’idée de business, une brève description et même une image, si vous le souhaitez. Ce qui est bien avec cette méthode, c’est que si vous décidez de changer le style ou la mise en page de vos cartes, vous n’avez qu’à modifier le composant “CarteBusiness.vue”, et le changement s’appliquera automatiquement partout dans votre projet !</h1>
+            </div>
+        </div> 
+
+
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" src="https://img.icons8.com/ios/50/gender-neutral-user--v4.png" alt="gender-neutral-user--v4"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">PROF (MENTORE)</h1>
+                <h1>Bonjour Sabjon ! Où en êtes-vous avec l’organisation de vos fichiers dans votre projet Vue.js ?</h1>
+            </div>
+        </div> 
+
+
+        <div class="flex gap-3 items-start">
+            <img width="48" height="48" src="https://img.icons8.com/ios/50/gender-neutral-user--v4.png" alt="gender-neutral-user--v4"/>
+            <div class="flex flex-col">
+                <h1 class="font-bold">sabjon mali</h1>
+                <h1>Bonjour ! J’ai séparé les composants, comme vous m’aviez conseillé, mais je me demande si je dois les organiser dans des dossiers spécifiques. J’ai des fichiers qui s’accumulent et c’est un peu confus.</h1>
+            </div>
+        </div> 
+
+
+
+
+
+
+
+
+
+
+        <!-- Affichage des nouveaux messages (déplacé ici) -->
+        <div id="messageList" class="space-y-4 mt-6"></div>
+
+        <!-- Zone de saisie du message -->
+        <div class="p-6 flex justify-center items-center gap-2">
+            <textarea id="message" class="border border-black text-left p-3 rounded-xl" style="height: 60px;" rows="4" cols="30" placeholder="Message a envoyer..."></textarea>
+            <button onclick="envoyerMessage()" class="border border-black text-left p-4 rounded-xl">Envoyer</button>
+        </div>
+
+        <script>
+            // Fonction qui s'exécute lors de l'envoi du message
+            function envoyerMessage() {
+                // Récupérer la valeur du message du textarea
+                const message = document.getElementById("message").value;
+                
+                // Vérifier que le message n'est pas vide
+                if (message.trim() !== "") {
+                    // Créer une nouvelle section avec les informations du message
+                    const newMessage = document.createElement("div");
+                    newMessage.classList.add("flex", "gap-3", "items-start");
+
+                    newMessage.innerHTML = `
+                        <img width="48" height="48" class="rounded-xl" src="https://img.icons8.com/fluency-systems-regular/48/image--v2.png" alt="image--v2"/>
+                        <div class="flex flex-col">
+                            <h1 class="font-bold">sabjon mali</h1>
+                            <h1>${message}</h1>
+                        </div>
+                    `;
+
+                    // Ajouter le nouveau message à la liste des messages
+                    document.getElementById("messageList").appendChild(newMessage);
+
+                    // Vider le textarea après l'envoi
+                    document.getElementById("message").value = "";
+                } else {
+                    alert("Veuillez entrer un message.");
+                }
+            }
+        </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="bg-blue-500 h-full flex items-center">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 mx-auto">
+            <a href="acceuil.html">
+            <img width="30" height="30" src="https://img.icons8.com/windows/64/menu--v1.png" alt="menu-icon"/>
+        </a>
+        <a href="index.html">
+            <img src="https://eleve.centre-europeen-formation.fr/static/media/logo-white.d82ca69404e871b89d5ddafbbbc4a7bd.svg" class="w-16 sm:w-20" alt="logo" style="margin-left: 30px;" />
+        </a>
+
+            <div class="flex gap-3 ">
+                <!-- Icône de Nouveau Post avec lien -->
+                <a href="message.html" title="Nouveau Post">
+                    <img width="25" height="25" src="https://img.icons8.com/material-outlined/48/new-post.png" alt="new-post-icon" />
+                </a>
+        
+                <!-- Icône de Rappels de Rendez-vous avec lien -->
+                <a href="notification.html" title="Rappels de Rendez-vous">
+                    <img width="25" height="25" src="https://img.icons8.com/ios/100/info--v2.png" alt="info--v2"/>                </a>
+        
+                <!-- Icône Image avec lien et style -->
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-yellow-400 h-24 flex flex-col items-center justify-center px-4">
+        <h1 class="text-white font-bold text-center text-sm sm:text-base">Vous avez 2 devoirs en retard depuis le 11 septembre 2024.</h1>
+        <p class="text-white mt-1 font-bold text-center text-sm sm:text-base">Pour réaliser votre devoir le plus en retard, cliquez <a href="#" class="underline">ICI</a>.</p>
+    </div>  
+
+
+    <div class="p-2 ">
+        <div style="background-image: url(&quot;https://api.centre-europeen-formation.fr/picture/6555cbb404a1e66ecc30c6e6/8504/4252&quot;); --bg-pos: 50%; background-repeat: no-repeat; background-size: cover; padding: 20px; height: 150px;" class=" rounded-xl">
+        </div>
+    </div>
+
+
+
+
+   <main class="p-3">
+    <div class="mb-8 flex justify-between">
+        <h1 class="font-bold text-xs">  Mes devoirs obligatoires a réaliser </h1>
+        <button class="text-xs text-blue-700 font-bold">Voir tout</button>
+    </div>
+    
+    <div class="flex gap-7">
+        <div>
+            <svg width="80" height="80" viewBox="0 0 120 120">
+                <!-- Cercle de fond -->
+                <circle cx="60" cy="60" r="54" stroke="#e6e6e6" stroke-width="12" fill="none" />
+                
+                <!-- Cercle de progression (20%) avec début en haut -->
+                <circle cx="60" cy="60" r="54" stroke="#4caf50" stroke-width="12" fill="none"
+                        stroke-dasharray="500.292" 
+                        stroke-dashoffset="271.433" transform="rotate(-90 60 60)" />
+                
+                <!-- Texte centré -->
+                <text x="50%" y="50%" font-size="16" text-anchor="middle" fill="#333" dy=".3em" style="font-weight: bold;">60%</text>
+            </svg>
+        </div>
+    
+        <div class="flex flex-col">
+            <h1 class="font-normal"><strong>3/15</strong> Devoirs complétés</h1>
+            <div class="flex gap-3 mt-4">
+                <button class="bg-red-200 rounded-lg p-1 text-xs" aria-label="0 devoirs en retard">0 en retard</button>
+                <button class="bg-blue-200 rounded-lg p-1 text-xs" aria-label="0 devoirs en correction">0 en correction</button>                
+            </div>
+        </div>        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="mb-8 flex justify-between mt-6">
+        <h1 class="font-bold text-xs">  Mes devoirs complétés </h1>
+        <button class="text-xs text-blue-700 font-bold">Voir tout</button>
+    </div>
+    
+    <div class="flex gap-7">
+        <div>
+            <svg width="80" height="80" viewBox="0 0 120 120">
+                <!-- Cercle de fond -->
+                <circle cx="60" cy="60" r="54" stroke="#e6e6e6" stroke-width="12" fill="none" />
+                
+                <!-- Cercle de progression (20%) avec début en haut -->
+                <circle cx="60" cy="60" r="54" stroke="#4caf50" stroke-width="12" fill="none"
+                        stroke-dasharray="339.292" 
+                        stroke-dashoffset="271.433" transform="rotate(-90 60 60)" />
+                
+                <!-- Texte centré -->
+                <text x="50%" y="50%" font-size="16" text-anchor="middle" fill="#333" dy=".3em" style="font-weight: bold;">20%</text>
+            </svg>
+        </div>
+    
+        <div class="flex flex-col">
+            <h1 class="font-normal"><strong>3/15</strong> Devoirs complétés</h1>
+            <div class="flex gap-3 mt-4">
+                <button class="bg-red-200 rounded-lg p-1 text-xs" aria-label="0 devoirs en retard">0 en retard</button>
+                <button class="bg-blue-200 rounded-lg p-1 text-xs" aria-label="0 devoirs en correction">2 en correction</button>                
+            </div>
+        </div>        
+    </div>
+
+<!-- début -->
+<div class="overflow-x-auto mt-8 p-4">
+    <div class="flex space-x-4">
+        <!-- Section 1 -->
+        <div class="flex flex-col justify-center items-center shadow-xl p-4 w-full sm:w-full md:w-full lg:w-full">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Nnpq5OsPa3lJkso6RztH-QAAAA&pid=Api&P=0&h=180" 
+                 class="w-full" 
+                 alt="Image représentant le niveau de compétence d'un développeur débutant" 
+                 style="border-radius: 12px;">
+            <h1 class="text-xs text-center font-semibold mt-4">Niveau 1: Développeur ama</h1>
+            <h1 class="text-green-900 font-bold">75%</h1>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+                <div class="bg-green-600 h-4 rounded-full" style="width: 75%;"></div>
+            </div>
+            <div class="flex gap-2 text-xs mt-3 text-center">
+                <h1>FAIT LE 12/11/2024</h1>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="flex flex-col justify-center items-center shadow-xl p-4 w-full sm:w-full md:w-full lg:w-full">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Nnpq5OsPa3lJkso6RztH-QAAAA&pid=Api&P=0&h=180" 
+                 class="w-full" 
+                 alt="Image représentant le niveau de compétence d'un développeur débutant" 
+                 style="border-radius: 12px;">
+            <h1 class="text-xs text-center font-semibold mt-4">Niveau 2: Développeur pro</h1>
+            <h1 class="text-green-900 font-bold">90%</h1>
+            <div class="w-full bg-gray-200 rounded-full h-4">
+                <div class="bg-green-600 h-4 rounded-full" style="width: 90%;"></div>
+            </div>
+            <div class="flex gap-2 text-xs mt-3 text-center">
+                <h1>FAIT LE 12/11/2024</h1>
+            </div>
+        </div>            
+    </div>
+</div>
+
+<!-- fin -->
+
+
+
+   </main>
+      
+
+
+
+
+   <use xlink:href="#icon-badge7-0"></use>
+</body>
+</html>

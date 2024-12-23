@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Classement avec Affichage Dynamique</title>
+</head>
+<body>
+<header class="bg-blue-500 h-full flex items-center">
+    <div class="flex justify-between items-center w-full px-4 md:px-8 mx-auto">
+        <a href="acceuil.html">
+        <img width="30" height="30" src="https://img.icons8.com/windows/64/menu--v1.png" alt="menu-icon"/>
+    </a>
+    <a href="index.html">
+        <img src="https://eleve.centre-europeen-formation.fr/static/media/logo-white.d82ca69404e871b89d5ddafbbbc4a7bd.svg" class="w-16 sm:w-20" alt="logo" style="margin-left: 30px;" />
+    </a>
+
+        <div class="flex gap-3 ">
+            <!-- Icône de Nouveau Post avec lien -->
+            <a href="message.html" title="Nouveau Post">
+                <img width="25" height="25" src="https://img.icons8.com/material-outlined/48/new-post.png" alt="new-post-icon" />
+            </a>
+    
+            <!-- Icône de Rappels de Rendez-vous avec lien -->
+            <a href="notification.html" title="Rappels de Rendez-vous">
+                <img width="25" height="25" src="https://img.icons8.com/ios/100/info--v2.png" alt="info--v2"/>                </a>
+    
+            <!-- Icône Image avec lien et style -->
+        </div>
+    </div>
+</header>
+
+
+    <div class="bg-yellow-400 h-24 flex flex-col items-center justify-center px-4">
+        <h1 class="text-white font-bold text-center text-sm sm:text-base">Vous avez 2 devoirs en retard depuis le 11 septembre 2024.</h1>
+        <p class="text-white mt-1 font-bold text-center text-sm sm:text-base">Pour réaliser votre devoir le plus en retard, cliquez <a href="#" class="underline">ICI</a>.</p>
+    </div>  
+
+    <div class="flex items-center mt-3 mb-3 px-4  ml-48" style="position:relative; right: 195px;">
+        <h1 class="text-black font-bold text-xl" >Mon classement</h1>
+    </div> 
+
+    <div class="relative w-full h-96 sm:h-128 md:h-160 lg:h-192 bg-cover bg-center" style="background-image: url('https://www.slate.fr/uploads/store/story_266807/medium_landscape_266807.jpg');">
+        <div class="absolute inset-0 flex justify-center items-center mt-8">
+            <div class="bg-white p-4 rounded-t-lg w-11/12 sm:w-1/2 h-full">
+                <p class="text-gray-500">Promotion juillet 2024</p>
+                <h1 class="text-black font-bold text-xl mt-2">Développeur Web</h1>
+
+                <!-- Classement -->
+                <div id="blocksContainer">
+                    <!-- Trois premiers rangs visibles -->
+                    <div class="mt-14 flex items-center gap-4"> 
+                        <h1 class="text-gray-400 font-bold text-lg mr-10">1</h1>
+                        <div class="flex items-center gap-3">
+                            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                            <h1 class="text-black font-bold text-xs">LUCAS S.</h1>
+                        </div>
+                        <div class="ml-auto flex flex-col items-center gap-1 text-center">
+                            <h1 class="text-gray-600 font-bold text-lg">1295</h1>
+                            <p class=" text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                        </div>
+                    </div>
+
+                    <hr class="mt-4">
+
+                    <div class="mt-5 flex items-center gap-4">
+                        <h1 class="text-gray-400 font-bold text-lg mr-10">2</h1>
+                        <div class="flex items-center gap-3">
+                            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                            <h1 class="text-black font-bold text-xs">EMMA B.</h1>
+                        </div>
+                        <div class="ml-auto flex  flex-col items-center gap-1">
+                            <h1 class="text-gray-600 font-bold text-lg">1250</h1>
+                            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                        </div>
+                    </div>
+
+                    <hr class="mt-4">
+
+                    <div class="mt-5 flex items-center gap-4">
+                        <h1 class="text-gray-400 font-bold text-lg mr-10">3</h1>
+                        <div class="flex items-center gap-3">
+                            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                            <h1 class="text-black font-bold text-xs">SABJON M.</h1>
+                        </div>
+                        <div class="ml-auto flex  flex-col items-center gap-1">
+                            <h1 class="text-gray-600 font-bold text-lg">1200</h1>
+                            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                        </div>
+                    </div>
+
+                    <hr class="mt-4">
+
+                    <!-- Conteneur pour les rangées dynamiques -->
+                    <div id="additionalRanks"></div>
+                </div>
+
+                <!-- Bouton pour afficher/masquer les blocs supplémentaires -->
+                <button id="toggleButton" onclick="toggleRankingBlocks()" class="w-full bg-white-500 text-blue-700 border border-blue-400 hover:text-white font-bold py-2 rounded-full mt-4 hover:bg-blue-700 ">Afficher plus de blocs</button>
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">1</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">LUCAS S.</h1>
+                    </div>
+                    <div class="ml-auto flex  flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">1295</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">2</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">EMMA B.</h1>
+                    </div>
+                    <div class="ml-auto flex  flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">1250</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4 border border-blue-500 p-4" id="block1">
+                    <div class="text-left mr-10">
+                        <p class="text-gray-600 text-md font-semibold font-bold ">Ma position</p>
+                        <h1 class="text-blue-500 font-bold text-4xl">3</h1> <!-- Agrandi à 5xl -->
+                    </div>
+                    
+                    <div class="ml-auto flex  items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-3xl text-blue-500">1200</h1> <!-- Agrandi à 6xl -->
+                        <p class="text-sm text-gray-500 font-semibold" style="font-size: 11px;">points</p> <!-- Agrandi à sm -->
+                    </div>
+                </div>
+                
+                
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">4</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">NATHALIE D.</h1>
+                    </div>
+                    <div class="ml-auto flex  flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg ">1150 </h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">5</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">ALEXANDRE T.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">1100</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+            
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">6</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">FLORENCE P.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">1050</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">7</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">JULIEN F.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">1000</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">8</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">MELANIE R.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">950</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">9</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">THOMAS K.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">900</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">7</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">CLAIRE W.</h1>
+                    </div>
+                    <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">850</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                    </div>
+                </div>
+
+                <hr class="mt-4">
+
+
+
+
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">8</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">LOUIS P.</h1>
+                    </div>
+                        <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">870</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                         </div>
+                </div>
+            
+            
+                <hr class="mt-4">
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">9</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">ELIAS D.</h1>
+                    </div>
+                        <div class="ml-auto flex flex-col items-center gap-1">
+                        <h1 class="text-gray-600 font-bold text-lg">730</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                         </div>
+                </div>
+            
+            
+                <hr class="mt-4">
+                <div class="mt-5 flex items-center gap-4">
+                    <h1 class="text-gray-400 font-bold text-lg mr-10">10</h1>
+                    <div class="flex items-center gap-3">
+                        <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+                        <h1 class="text-black font-bold text-xs">LUCAS B.</h1>
+                    </div>
+                        <div class="ml-auto flex flex-col items-center gap-1"> 
+                        <h1 class="text-gray-600 font-bold text-lg">330</h1>
+                        <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour afficher/masquer les blocs supplémentaires
+function toggleRankingBlocks() {
+    // Récupérer le bouton et le conteneur des blocs supplémentaires
+    const button = document.getElementById('toggleButton');
+    const additionalRanks = document.getElementById('additionalRanks');
+    
+    // Vérifier si les blocs supplémentaires sont visibles ou non
+    if (additionalRanks.style.display === 'none' || additionalRanks.style.display === '') {
+        // Afficher les blocs supplémentaires
+        additionalRanks.style.display = 'block';
+        button.textContent = 'Masquer les blocs supplémentaires';  // Modifier le texte du bouton
+    } else {
+        // Masquer les blocs supplémentaires
+        additionalRanks.style.display = 'none';
+        button.textContent = 'Afficher plus de blocs';  // Réinitialiser le texte du bouton
+    }
+}
+
+// Optionnel : ajouter dynamiquement des éléments au classement
+const additionalRanksHTML = `
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">4</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">NATHALIE D.</h1>
+        </div>
+        <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">1150</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+        </div>
+    </div>
+    <hr class="mt-4">
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">5</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">ALEXANDRE T.</h1>
+        </div>
+        <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">1100</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+        </div>
+    </div>
+    <hr class="mt-4">
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">6</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">FLORENCE P.</h1>
+        </div>
+        <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">1050</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+        </div>
+    </div>
+    <hr class="mt-4">
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">7</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">JULIEN F.</h1>
+        </div>
+        <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">1000</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+        </div>
+    </div>
+
+
+    <hr class="mt-4">
+    <div class="mt-5 flex  items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">8</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">LOUIS P.</h1>
+        </div>
+            <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">870</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+             </div>
+    </div>
+
+
+    <hr class="mt-4">
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">9</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">ELIAS D.</h1>
+        </div>
+            <div class="ml-auto flex flex-col items-center gap-1">
+            <h1 class="text-gray-600 font-bold text-lg">730</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+             </div>
+    </div>
+
+
+    <hr class="mt-4">
+    <div class="mt-5 flex items-center gap-4">
+        <h1 class="text-gray-400 font-bold text-lg mr-10">10</h1>
+        <div class="flex items-center gap-3">
+            <img src="https://api.centre-europeen-formation.fr/picture/none/128/128" class="w-10 h-10 rounded-full" alt=""/>
+            <h1 class="text-black font-bold text-xs">LUCAS B.</h1>
+        </div>
+            <div class="ml-auto flex flex-col items-center gap-1"> 
+            <h1 class="text-gray-600 font-bold text-lg">330</h1>
+            <p class="text-xs text-gray-500 font-semibold" style="font-size: 11px;">points</p>
+             </div>
+    </div>
+
+`;
+
+// Ajouter les rangées supplémentaires au conteneur
+document.getElementById('additionalRanks').innerHTML = additionalRanksHTML;
+
+    </script>
+    
+</body>
+</html>
